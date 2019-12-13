@@ -1,0 +1,182 @@
+http://29743.hosts2.ma-cloud.nl/bewijzenmap/periode1.2/fro/opdracht2
+
+Hieronder de code. Alle code staat onder elkaar. HTML, CSS en daarna JAVASCRIPT
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fruitmachinetje</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="items">
+      <div class="title">
+        <h1>3 DEZELFDE SNOEPSOORTEN</h1>
+      </div>
+
+      <div class="Fruitsoorten">
+        <h1 id="fruit1"></h1>
+        <h1 id="fruit2"></h1>
+        <h1 id="fruit3"></h1>
+      </div>
+      <div class="statistics">
+        <h2 id="gedraaid">Aantal keren gedraaid: 0</h2>
+      </div>
+      <div class="cta" id="cta">
+        <button id="button" onclick="random_fruit();">TJAKKA!</button>
+      </div>
+    </div>
+
+
+  </div>
+  <a href="http://validator.w3.org/check?uri=referer" target="_blank">
+    <img src="https://blanken5.home.xs4all.nl/afb/valid-html5-blue.png" alt="Valide HTML5"></a>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+    <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue.gif" alt="Valide CSS"></a>
+
+  <script src="javascript.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .wrapper {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  body {
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .Fruitsoorten {
+    border: solid rgb(223, 192, 16) 5px;
+    min-width: 1000px;
+    background-color: #fff176;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 75px;
+  }
+  
+  
+  
+  .title {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: rgb(223, 192, 16);
+  }
+  
+  button {
+    background: #f1e998;
+    width: 400px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border: solid rgb(209, 212, 1) 2px;
+  
+    color: #000000;
+  }
+
+  h2 {
+      color: #f1e998;
+  }
+  
+  button:focus {
+    outline: 0;
+  }
+  
+  button:hover {
+    background: #ff9100;
+  }
+  
+  #fruit1,
+  #fruit2,
+  #fruit3 {
+    font-size: 200px;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .statistics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 75px;
+  }
+  
+  
+  
+  
+  let fruit = [
+  "&#127850",
+  "&#127851",
+  "&#127852",
+  "&#127853",
+  "&#127849",
+  "&#127846"
+];
+
+let fruit1 = document.getElementById("fruit1");
+let fruit2 = document.getElementById("fruit2");
+let fruit3 = document.getElementById("fruit3");
+
+var gedraaid = document.getElementById("gedraaid");
+
+let kerengespeeld = -1;
+
+random_fruit();
+
+function random_fruit() {
+  var random1 = fruit[Math.floor(Math.random() * fruit.length)];
+  fruit1.innerHTML = random1;
+
+  var random2 = fruit[Math.floor(Math.random() * fruit.length)];
+  fruit2.innerHTML = random2;
+
+  var random3 = fruit[Math.floor(Math.random() * fruit.length)];
+  fruit3.innerHTML = random3;
+
+  kerengespeeld++;
+  gedraaid.innerHTML = "Aantal keren gedraaid: " + kerengespeeld;
+}
+
+
+
+
+
